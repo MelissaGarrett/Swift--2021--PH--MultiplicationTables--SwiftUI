@@ -9,19 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isGameRunning = false
-    
-    var questionsCorrect = 0
-        
+            
     var body: some View {
         NavigationView {
             Group {
+                Spacer()
                 TablesView()
+                Spacer()
                 QuestionsView()
+                Spacer()
+                GeneratedQuestionsView()
+                Spacer()
+                Spacer()
             }
             .navigationTitle("MultiplicationTables")
+            .navigationBarItems(trailing:
+                Button(action: startGame) {
+                    Text("New Game")
+                }
+                .padding(5)
+                .foregroundColor(.black)
+                .background(Color.green)
+                .border(Color.black, width: 2)
+            )
             
-            Spacer()
         }
+    }
+    
+    func startGame() {
+        
     }
 }
 

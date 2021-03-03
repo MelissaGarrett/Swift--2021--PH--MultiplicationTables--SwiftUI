@@ -13,6 +13,8 @@
 		01B2E18425EDA7AD007FB23F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01B2E18325EDA7AD007FB23F /* Preview Assets.xcassets */; };
 		01B2E18D25EDDC5A007FB23F /* TablesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B2E18C25EDDC5A007FB23F /* TablesView.swift */; };
 		01B2E19025EDDEC4007FB23F /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B2E18F25EDDEC4007FB23F /* QuestionsView.swift */; };
+		01B2E19525EEFEA1007FB23F /* QuestionsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B2E19425EEFEA1007FB23F /* QuestionsArray.swift */; };
+		01B2E19B25EF03E6007FB23F /* GeneratedQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B2E19A25EF03E6007FB23F /* GeneratedQuestionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		01B2E18525EDA7AD007FB23F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01B2E18C25EDDC5A007FB23F /* TablesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesView.swift; sourceTree = "<group>"; };
 		01B2E18F25EDDEC4007FB23F /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
+		01B2E19425EEFEA1007FB23F /* QuestionsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsArray.swift; sourceTree = "<group>"; };
+		01B2E19A25EF03E6007FB23F /* GeneratedQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedQuestionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				01B2E17E25EDA7A8007FB23F /* ContentView.swift */,
 				01B2E18C25EDDC5A007FB23F /* TablesView.swift */,
 				01B2E18F25EDDEC4007FB23F /* QuestionsView.swift */,
+				01B2E19A25EF03E6007FB23F /* GeneratedQuestionsView.swift */,
+				01B2E19425EEFEA1007FB23F /* QuestionsArray.swift */,
 				01B2E18025EDA7AD007FB23F /* Assets.xcassets */,
 				01B2E18525EDA7AD007FB23F /* Info.plist */,
 				01B2E18225EDA7AD007FB23F /* Preview Content */,
@@ -146,7 +152,9 @@
 			files = (
 				01B2E19025EDDEC4007FB23F /* QuestionsView.swift in Sources */,
 				01B2E17F25EDA7A8007FB23F /* ContentView.swift in Sources */,
+				01B2E19B25EF03E6007FB23F /* GeneratedQuestionsView.swift in Sources */,
 				01B2E18D25EDDC5A007FB23F /* TablesView.swift in Sources */,
+				01B2E19525EEFEA1007FB23F /* QuestionsArray.swift in Sources */,
 				01B2E17D25EDA7A8007FB23F /* MultiplicationTablesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

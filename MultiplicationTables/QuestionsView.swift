@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct QuestionsView: View {
-    @State private var questionsSelection = 5
+    @State private var questionsSelection = 0
 
-    let questionsChoices = ["5", "10", "20", "All"]
+    let questionsChoices = ["5", "10", "All"]
 
     var body: some View {
-        Section(header: Text("How many questions do you want to answer?")) {
+        Section(header: Text("How many questions do you want to answer?")
+                    .font(.title3)
+                    .padding(.bottom, 20)) {
             Picker("Number of questions", selection: $questionsSelection) {
                 ForEach(0 ..< questionsChoices.count) {
                     Text("\(self.questionsChoices[$0])")
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
+            .background(Color.blue)
         }
     }
 }

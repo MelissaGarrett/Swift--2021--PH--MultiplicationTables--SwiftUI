@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct TablesView: View {
-    @State private var multiplicationSelection = 1
+    @State private var multiplicationSelection = 0
 
     let multiplicationChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
     var body: some View {
-        Section (header: Text("Which table do you want to practice?")) {
+        Section (header: Text("Which table do you want to practice?")
+                    .font(.title2)
+                    .padding(.bottom, 20)) {
             HStack {
                 Button(action: {
                     
