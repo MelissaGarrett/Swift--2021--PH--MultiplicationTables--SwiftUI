@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct QuestionsView: View {
-    @State private var questionsSelection = 0
+    @Binding var questionsSelection: Int
 
     let questionsChoices = ["5", "10", "All"]
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TablesView: View {
-    @State private var multiplicationSelection = 0
+    @Binding var multiplicationSelection: Int 
 
     let multiplicationChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 

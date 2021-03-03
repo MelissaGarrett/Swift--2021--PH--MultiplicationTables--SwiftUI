@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct GeneratedQuestionsView: View {
+    @Binding var multiplicationSelection: Int
+    @Binding var questionsSelection: Int
+    @Binding var isGameRunning: Bool
+    
     @State private var currentQuestion = 0
     @State private var playerAnswer = ""
 
@@ -37,5 +41,6 @@ struct GeneratedQuestionsView: View {
                 .padding(.trailing, 20)
             }
         }
+        .opacity(isGameRunning ? 1 : 0)
     }
 }
