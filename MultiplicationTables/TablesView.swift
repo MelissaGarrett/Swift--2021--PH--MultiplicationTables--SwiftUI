@@ -19,7 +19,7 @@ struct TablesView: View {
             ForEach(0 ..< 3) { number in
                 HStack {
                     Button(action: {
-                        
+                        multiplicationSelection = multiplicationChoices[number][0]
                     }) {
                         Text("\(self.multiplicationChoices[number][0])")
                             .frame(minWidth: 0, maxWidth: .infinity) // equal widths for buttons
@@ -31,7 +31,7 @@ struct TablesView: View {
                     }
                     
                     Button(action: {
-                        
+                        multiplicationSelection = multiplicationChoices[number][1]
                     }) {
                         Text("\(self.multiplicationChoices[number][1])")
                             .frame(minWidth: 0, maxWidth: .infinity)
@@ -43,7 +43,7 @@ struct TablesView: View {
                     }
                     
                     Button(action: {
-                        
+                        multiplicationSelection = multiplicationChoices[number][2]
                     }) {
                         Text("\(self.multiplicationChoices[number][2])")
                             .frame(minWidth: 0, maxWidth: .infinity)
@@ -55,7 +55,7 @@ struct TablesView: View {
                     }
                     
                     Button(action: {
-                        
+                        multiplicationSelection = multiplicationChoices[number][3]
                     }) {
                         Text("\(self.multiplicationChoices[number][3])")
                             .frame(minWidth: 0, maxWidth: .infinity)

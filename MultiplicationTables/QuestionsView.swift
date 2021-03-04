@@ -9,8 +9,7 @@ import SwiftUI
 
 struct QuestionsView: View {
     @Binding var questionsSelection: Int
-
-    let questionsChoices = ["5", "10", "All"]
+    @Binding var questionsChoices: [String]
 
     var body: some View {
         Section(header: Text("How many questions do you want to answer?")

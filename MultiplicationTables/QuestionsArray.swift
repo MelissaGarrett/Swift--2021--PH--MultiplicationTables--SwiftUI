@@ -8,6 +8,11 @@
 import Foundation
 
 struct QuestionsArray {
-    let question = ""
-    let answer = 0
+    var question = ""
+    var answer = 0
+    
+    init(question: String, answer: Int) {
+        self.question = question
+        self.answer = answer
+    }
 }
