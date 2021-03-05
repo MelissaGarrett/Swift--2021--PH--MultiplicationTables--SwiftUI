@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GameplayKit
 
 struct ContentView: View {
     @State private var isGameRunning = false
@@ -17,7 +18,7 @@ struct ContentView: View {
     @State private var convertedSelection = 5
     @State private var questionsChoices = ["5", "10", "All"]
 
-    @State private var randomNumber = 0
+    @State private var randomNumber = GKRandomDistribution(lowestValue: 1, highestValue: 12) //numbers still repeat
     @State private var playerQuestions = [QuestionsArray]()
             
     var body: some View {
@@ -63,11 +64,11 @@ struct ContentView: View {
         default:
             convertedSelection = 5
         }
-        
+                
         for _ in (0 ..< convertedSelection) {
-            randomNumber = Int.random(in: 1...12)
+            let randNum = randomNumber.nextInt()
 
-            let testQuestion = QuestionsArray(question: "What is \(multiplicationSelection) X \(randomNumber)?", answer: multiplicationSelection * randomNumber)
+            let testQuestion = QuestionsArray(question: "What is \(multiplicationSelection) X \(randNum)?", answer: multiplicationSelection * randNum)
 
             playerQuestions.append(testQuestion)
         }

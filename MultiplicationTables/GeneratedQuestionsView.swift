@@ -39,7 +39,7 @@ struct GeneratedQuestionsView: View {
                     .foregroundColor(.black)
                     .background(Color.green)
                     .border(Color.black, width: 2)
-                    .padding(.trailing, 20)
+                    .padding(.trailing, 10)
                 }
             } else {
                 HStack {
@@ -56,6 +56,18 @@ struct GeneratedQuestionsView: View {
     }
     
     func checkAnswer() {
+        if playerQuestions[currentQuestion].answer == Int(playerAnswer) {
+            questionsCorrect += 1
+        }
+        
+        questionCounter += 1
+        
+        if questionCounter > convertedSelection {
+            isGameOver = true
+        } else {
+            currentQuestion += 1
+            playerAnswer = ""
+        }
         
     }
 }
