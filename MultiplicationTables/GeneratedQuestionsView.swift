@@ -9,27 +9,29 @@ import SwiftUI
 
 struct GeneratedQuestionsView: View {
     @Binding var isGameRunning: Bool
+    @Binding var isGameOver: Bool
+    @Binding var playerQuestions: [QuestionsArray]
+    @Binding var convertedSelection: Int
     
+    @State private var questionCounter = 1
+    @State private var currentQuestion = 0
     @State private var playerAnswer = ""
-    @State private var isGameOver = false
-
-    var questionsCorrect = 0
-    var playerQuestions = [QuestionsArray]()
+    @State private var questionsCorrect = 0
 
     var body: some View {
         Section(header: Text("Let's Go!")
                     .foregroundColor(.yellow)
                     .font(.title)
                     .padding(.bottom, 20)) {
-            if (!isGameOver) {
+            if (isGameRunning && !isGameOver) {
                 HStack {
-                    Text("What is 1 x 1?")
-                        .padding(.leading, 20)
-                        .padding(.trailing, 20)
+                    Text("\(playerQuestions[currentQuestion].question)")
+                        .padding(.leading, 15)
+                        .padding(.trailing, 10)
                     TextField("Answer", text: $playerAnswer)
                         .keyboardType(.numberPad)
                     Button(action: {
-                        print("MISSY")
+                        self.checkAnswer()
                     }) {
                         Text("Submit")
                     }
@@ -51,5 +53,9 @@ struct GeneratedQuestionsView: View {
             }
         }
         .opacity(isGameRunning ? 1 : 0)
-    }    
+    }
+    
+    func checkAnswer() {
+        
+    }
 }

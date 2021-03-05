@@ -9,14 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isGameRunning = false
-    @State private var multiplicationSelection = 0 // default of 1
+    @State private var isGameOver = false
+    
+    @State private var multiplicationSelection = 1
+    
     @State private var questionsSelection = 0 // default of "5"
-    @State private var randomNumber = 0
-    @State private var playerAnswer = ""
-    @State private var currentQuestion = 0
-    @State private var questionsCorrect = 0
-    @State private var playerQuestions = [QuestionsArray]()
+    @State private var convertedSelection = 5
     @State private var questionsChoices = ["5", "10", "All"]
+
+    @State private var randomNumber = 0
+    @State private var playerQuestions = [QuestionsArray]()
             
     var body: some View {
         NavigationView {
@@ -26,7 +28,7 @@ struct ContentView: View {
                 Spacer()
                 QuestionsView(questionsSelection: $questionsSelection, questionsChoices: $questionsChoices)
                 Spacer()
-                GeneratedQuestionsView(isGameRunning: $isGameRunning)
+                GeneratedQuestionsView(isGameRunning: $isGameRunning, isGameOver: $isGameOver, playerQuestions: $playerQuestions, convertedSelection: $convertedSelection)
                 Spacer()
                 Spacer()
             }
@@ -51,22 +53,21 @@ struct ContentView: View {
     }
     
     func createQuestions() {
-        let selection: Int
         switch (questionsSelection) {
         case 0:
-            selection = 5
+            convertedSelection = 5
         case 1:
-            selection = 10
+            convertedSelection = 10
         case 2:
-            selection = 12
+            convertedSelection = 12
         default:
-            selection = 5
+            convertedSelection = 5
         }
         
-        for _ in (0 ..< selection) {
+        for _ in (0 ..< convertedSelection) {
             randomNumber = Int.random(in: 1...12)
 
-            let testQuestion = QuestionsArray(question: "What is \(multiplicationSelection) X \(randomNumber)", answer: multiplicationSelection * randomNumber)
+            let testQuestion = QuestionsArray(question: "What is \(multiplicationSelection) X \(randomNumber)?", answer: multiplicationSelection * randomNumber)
 
             playerQuestions.append(testQuestion)
         }
